@@ -13,6 +13,7 @@ const startScreenElem = document.querySelector("[data-start-screen]")
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
 document.addEventListener("keydown", handleStart, { once: true })
+document.addEventListener("click", handleStart, { once: true })
 
 let lastTime
 let speedScale
@@ -60,6 +61,8 @@ function updateScore(delta) {
 }
 
 function handleStart() {
+  document.removeEventListener("click", handleStart)
+  document.removeEventListener("keydown", handleStart)
   lastTime = null
   speedScale = 1
   score = 0
@@ -74,6 +77,7 @@ function handleLose() {
   setDinoLose()
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
+    document.addEventListener("click", handleStart, { once: true })
     startScreenElem.classList.remove("hide")
   }, 100)
 }
