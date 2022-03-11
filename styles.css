@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: sans-serif;
 }
 
 .world {
@@ -18,18 +19,25 @@ body {
 
 .score {
   text-align: center;
-  font-size: 3vmin;
+  font-size: 3.5vmin;
   right: 1vmin;
   top: 1vmin;
 }
 
 .start-screen {
   position: absolute;
-  font-size: 5vmin;
+  font-size: 4vmin;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: .5em .68em .5em .68em;
+}
+
+.start-screen span{
+  font-size: 3vmin;
 }
 
 .hide {
