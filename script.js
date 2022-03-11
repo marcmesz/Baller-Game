@@ -9,11 +9,13 @@ const SPEED_SCALE_INCREASE = 0.00001
 const worldElem = document.querySelector("[data-world]")
 const scoreElem = document.querySelector("[data-score]")
 const startScreenElem = document.querySelector("[data-start-screen]")
+const youLoseElem = document.querySelector(".you-lose")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
 document.addEventListener("keydown", handleStart, { once: true })
 document.addEventListener("click", handleStart, { once: true })
+
 
 let lastTime
 let speedScale
@@ -71,6 +73,7 @@ function handleStart() {
   setupCactus()
   startScreenElem.classList.add("hide")
   window.requestAnimationFrame(update)
+  youLoseElem.style.display="block"
 }
 
 function handleLose() {
