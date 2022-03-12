@@ -60,7 +60,7 @@ body {
 .dino {
   --bottom: 0;
   position: absolute;
-  left: 1%;
+  left: 5%;
   height: 30%;
   bottom: calc(var(--bottom) * 1%);
 }
@@ -76,4 +76,11 @@ footer{
   position: absolute;
   bottom: 1em;
   font-size: .9em;
+  display: none;
+}
+
+@media (min-width: 1000px){
+  footer{
+    display: block;
+  }
 }
